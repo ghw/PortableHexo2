@@ -4,6 +4,7 @@
 # --show-control-chars: help showing Korean or accented characters
 alias ls='ls -F --color=auto --show-control-chars'
 alias ll='ls -l'
+alias npm='npm --registry=https://registry.npm.taobao.org'
 
 case "$TERM" in
 xterm*)
