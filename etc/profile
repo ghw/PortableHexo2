@@ -21,7 +21,7 @@
 # Modifying these default path settings can be done in different ways.
 # To learn more about startup files, refer to your shell's man page.
 
-MSYS2_PATH="/opt/bitmoeinc/portablehexo:/opt/nodejs:/usr/local/bin:/usr/bin:/bin"
+MSYS2_PATH="/opt/bitmoeinc/portablehexo:/opt/nodejs:/mingw32/bin:/usr/local/bin:/usr/bin:/bin"
 MANPATH='/usr/local/man:/usr/share/man:/usr/man:/share/man'
 INFOPATH='/usr/local/info:/usr/share/info:/usr/info:/share/info'
 
