@@ -1,0 +1,10 @@
+Transparency=15
+BoldAsFont=no
+Rows=30
+Columns=80
+Term=xterm-256color
+Locale=zh_CN
+Charset=UTF-8
+BackspaceSendsBS=yes
+Font=ĞÂËÎÌå
+FontHeight=10
