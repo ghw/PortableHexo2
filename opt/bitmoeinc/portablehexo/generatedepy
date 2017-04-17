@@ -1,0 +1,40 @@
+#!/bin/env bash
+clear
+source `dirname $0`/portablehexo-welcome
+echo "                ’-----------------------------------------’"
+echo "              |||  欢迎使用比特萌 HEXO 便携版博文部署程序 |||"
+echo "       |=============================================================|"
+echo "       |    本步骤会执行博文生成页面文件并想您指定的服务器推送页面文 |"
+echo "       |件，本程序会调用 HEXO 主配置文件部署字段中的 `echo -e "\033[32;49;1mdeploy:\033[39;49;0m"` 信息，为|"
+echo "       |您提交站点数据。                                             |"
+echo "       |        本步骤实际执行部署指令为： `echo -e "\033[32;49;1mhexo g && hexo d\033[39;49;0m"` 。       |"
+echo "       |=============================================================|"
+echo ""
+echo "    按下 `echo -e "\033[32;49;1m [ Enter ] \033[39;49;0m"` 键启动部署指令"
+read TEMPINPUT
+cd /home/`whoami`/hexo
+hexo g && hexo d
+if [ $? -eq 0 ];then
+    echo "                     您成功完成了对 HEXO 初始化配置，"
+    echo "                 更多的配置请参照 HEXO 官方简体中文文档，"
+    echo "             自行调整博客站点主目录下的 `echo -e "\033[32;49;1m_config.yml\033[39;49;0m"` 主配置文件。 "
+    echo "                     https://hexo.io/zh-cn/docs/"
+    echo ""
+else
+    echo ""
+    echo "                    很遗憾，您未能完成了对 HEXO 初始化配置，"
+    echo "             您可以选择："
+    echo ""
+    echo "         1、向我们 Github 项目地址发送问题报告或者提交修复方案："
+    echo "             https://github.com/Bitmoe/PortableHexo/issues"
+    echo ""
+    echo "         2、向我们官方产品论坛发送问题报告或者提交修复方案："
+    echo "                https://bbs.bitmoe.cn/PortableHexo/"
+    echo ""
+    echo "         3、向非官方的 HEXO 讨论 QQ 群 ：287306637 报告问题。"
+    echo ""
+    echo "               感谢您对 `echo -e "\033[32;49;1m比特萌 HEXO 便携版\033[39;49;0m"` 项目的支持！ "
+fi
+echo ""
+echo "回车退出"
+read TEMPINPUT

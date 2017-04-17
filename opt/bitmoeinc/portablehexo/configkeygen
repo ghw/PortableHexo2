@@ -1,0 +1,26 @@
+#!/bin/env bash
+clear
+source `dirname $0`/portablehexo-welcome
+echo "                 欢迎使用比特萌 HEXO 便携版密钥初始化程序"
+echo ""
+#echo "                    感谢您选择了 `echo -e "\033[32;49;1m比特萌 HEXO 便携版\033[39;49;0m"` ！ "
+#echo ""
+echo "             您当前系统 .ssh 目录中包含的密钥信息有："
+echo ""
+echo "`ls -al ~/.ssh |grep id`"
+echo ""
+echo "    请您确认以上密钥是否包含有 `echo -e "\033[32;49;1m.pub\033[39;49;0m"` 结尾的公钥文件，"
+echo "                    若有请按 `echo -e "\033[32;49;1mCrtl + C \033[39;49;0m"` 取消，"
+echo "    您可以自行手工获取文件内容，或者终端模式下执行 ~/.ssh/id_*.pub 读取。"
+echo "                    若密钥列表里没有 `echo -e "\033[32;49;1m.pub\033[39;49;0m"` 结尾的公钥文件，"
+echo "    请按下`echo -e "\033[32;49;1m [ Enter ] \033[39;49;0m"`键，系统自动为您以默认参数生成一份密钥对。"
+echo ""
+echo "生成过程推荐您一律 `echo -e "\033[32;49;1m [ Enter ] \033[39;49;0m"` 继续。"
+read
+
+ssh-keygen
+
+echo "    密钥生成完成，请您以下密钥信息添加到您的托管服务密钥管理中，"
+echo "        参考信息： https://bbs.bitmoe.cn/xxxxxxx，"
+echo ""
+echo "`cat ~/.ssh/id_rsa.pub`"

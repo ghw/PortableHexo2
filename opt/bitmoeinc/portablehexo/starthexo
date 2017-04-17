@@ -1,0 +1,10 @@
+#!/bin/env bash
+clear
+. `dirname $0`/configsetup
+
+. `dirname $0`/configdeploy
+
+. `dirname $0`/configkeygen
+
+. `dirname $0`/aboutportablehexo
+

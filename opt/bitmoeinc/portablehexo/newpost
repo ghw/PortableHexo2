@@ -1,0 +1,27 @@
+#!/bin/env bash
+clear
+echo ""
+echo ""
+source `dirname $0`/portablehexo-welcome
+echo ""
+echo "                ’-----------------------------------------’"
+echo "              |||  欢迎使用比特萌 HEXO 便携版博文新建程序 |||"
+echo "       |=============================================================|"
+echo "       |    由于 HEXO 是根据您文章的文件名生成博客文章 URL 的，中文文|"
+echo "       |件路径或者中文文件名在国内部分主机可能存在兼容性问题，所以强 |"
+echo "       |烈建议您将文章名换成 拼音 或者 英文，也就是以下文也就是以下文|"
+echo "       |章文件名推荐使用 拼音 或者 英文。                            |"
+echo "       |=============================================================|"
+echo "             文章创建成功后您可以使用任何您顺手的编辑器编辑它！"
+echo ""
+cd /home/`whoami`/hexo
+echo "请输入准备撰写的文章文件名："
+read FILENAME
+hexo new $FILENAME
+echo ""
+echo "$FILENAME.md 新建成功"
+echo ""
+echo "文章源文件 $FILENAME.md 您可以使用任何您顺手的编辑器编辑它"
+echo ""
+echo "回车退出"
+read TEMPINPUT

@@ -1,0 +1,1 @@
+start usr/bin/mintty -e /bin/bash --login -i

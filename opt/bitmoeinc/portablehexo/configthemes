@@ -1,0 +1,46 @@
+#!/bin/env bash
+clear
+source `dirname $0`/portablehexo-welcome
+echo ""
+echo "                  欢迎使用比特萌 HEXO 便携版主题切换程序"
+echo ""
+echo "                    感谢您选择了 `echo -e "\033[32;49;1m比特萌 HEXO 便携版\033[39;49;0m"` ！ "
+echo ""
+echo "            我们在便携版发版时，内置了三套主题，它们分别是，"
+echo "         1、hexo 官方开发及维护的 `echo -e "\033[32;49;1mlandscape\033[39;49;0m"` 主题；（默认主题）"
+echo "         2、iissnan 开发及维护的 `echo -e "\033[32;49;1mnext\033[39;49;0m"` 主题；   演示：https://ioliu.cn"
+echo "         3、tufu9441 维护的 `echo -e "\033[32;49;1mmaupassant\033[39;49;0m"` 主题。  演示：https://www.haomwei.com"
+echo ""
+echo ""
+echo "     输入主题名并按下 `echo -e "\033[32;49;1m [ Enter ] \033[39;49;0m"` 键切换！（ Crtl+C 取消）"
+echo ""
+read THEMES
+export HEXOCONFIG=/home/`whoami`/hexo/_config.yml
+
+sed -i '/^theme: /c\theme: '$THEMES'' $HEXOCONFIG
+
+#sed -i '/^theme:/d' $HEXOCONFIG
+#sed -i '$a\  theme: '$THEMES'' $HEXOCONFIG
+
+if [ $? -eq 0 ];then
+    echo "                    您成功完成了对 HEXO 主题的切换置，"
+    echo ""
+    echo "                 更多的配置请参照 HEXO 官方简体中文文档，"
+    echo "             自行调整博客站点主目录下的 `echo -e "\033[32;49;1m_config.yml\033[39;49;0m"` 主配置文件。 "
+    echo "                     https://hexo.io/zh-cn/docs/"
+    echo ""
+else
+    echo ""
+    echo "                     很遗憾，您未能完成了对 HEXO 主题的切换置，"
+    echo "             您可以选择："
+    echo ""
+    echo "         1、向我们 Github 项目地址发送问题报告或者提交修复方案："
+    echo "             https://github.com/Bitmoe/PortableHexo/issues"
+    echo ""
+    echo "         2、向我们官方产品论坛发送问题报告或者提交修复方案："
+    echo "                https://bbs.bitmoe.cn/PortableHexo/"
+    echo ""
+    echo "         3、向非官方的 HEXO 讨论 QQ 群 ：287306637 报告问题。"
+    echo ""
+    echo "               感谢您对 `echo -e "\033[32;49;1m比特萌 HEXO 便携版\033[39;49;0m"` 项目的支持！ "
+fi
