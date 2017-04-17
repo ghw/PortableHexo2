@@ -1,6 +1,11 @@
 # Add bin path in the home directory ontop of the PATH variable
 export PATH="$HOME/bin:$PATH"
 
+if [ ! -d "/home/`whoami`/.ssh" ]; then
+  mkdir -p /home/`whoami`/.ssh
+fi
+cd ~
+
 # Allow SSH to ask via GUI if the terminal is not usable
 test -n "$SSH_ASKPASS" || {
 	case "$MSYSTEM" in
